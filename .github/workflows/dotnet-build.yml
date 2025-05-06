@@ -27,3 +27,10 @@ jobs:
 
       - name: Build do projeto
         run: dotnet build **/*.csproj --no-restore --configuration Release
+
+      - name: Upload dos artefatos
+        uses: actions/upload-artifact@v4
+        with:
+          name: webapp-dotnet
+          path: |
+            **/bin/Release/net8.0/
